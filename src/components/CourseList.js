@@ -8,7 +8,7 @@ function CourseList(props) {
       <thead>
         <tr>
           <th>Title</th>
-          <th>Author ID</th>
+          <th>Author</th>
           <th>Category</th>
           <th>&nbsp;</th>
         </tr>
@@ -20,7 +20,7 @@ function CourseList(props) {
               <td>
                 <Link to={"/course/" + course.slug}>{course.title}</Link>
               </td>
-              <td>{course.authorId}</td>
+              <td>{course.authorId === 1 ? "Cory House" : "Scott Allen"}</td>
               <td>{course.category}</td>
               <td>
                 <button
