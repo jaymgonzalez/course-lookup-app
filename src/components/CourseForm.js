@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { Redirect } from "react-router-dom"
 
 function CourseForm(props) {
-  console.log(typeof props.course === "undefined")
   if (typeof props.course !== "undefined") {
     return (
       <form onSubmit={props.onSubmit}>
