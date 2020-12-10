@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import TextInput from "./common/TextInput"
 import PropTypes from "prop-types"
 import { Redirect } from "react-router-dom"
+import { useAuthorsData } from '../hooks/useAuthorsData'
 
-const url = 'https://course-pluralsight-api.herokuapp.com/authors'
 
 function CourseForm(props) {
 
-  const [authorsData, setAuthorsData] = useState([]);
-
-  useEffect(() => {
-    getAuthorsData()
-  }, [])
-
-
-  const getAuthorsData = async () => {
-    const response = await fetch(url);
-    const jsonData = await response.json();
-    setAuthorsData(jsonData);
-  }
+  const authorsData = useAuthorsData()
 
   if (typeof props.course !== "undefined") {
     return (

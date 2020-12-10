@@ -1,8 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
+import { useAuthorsData } from "../hooks/useAuthorsData";
 
 function CourseList(props) {
+
+  const authorsData = useAuthorsData()
+
   return (
     <table className="table">
       <thead>
@@ -20,7 +24,7 @@ function CourseList(props) {
               <td>
                 <Link to={"/course/" + course.slug}>{course.title}</Link>
               </td>
-              <td>{course.authorId === 1 ? "Cory House" : "Scott Allen"}</td>
+              <td>{course.authorId === authorsData.id && authorsData.name}</td>
               <td>{course.category}</td>
               <td>
                 <button
