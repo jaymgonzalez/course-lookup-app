@@ -6,6 +6,7 @@ class AboutPage extends React.Component {
       <>
         <h2>About</h2>
         <p>This app uses React.</p>
+        <p>It was created to show the courses I've been doing</p>
       </>
     )
   }

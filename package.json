@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "run-p start:dev",
-    "start:dev": "cross-env REACT_APP_API_URL=https://course-pluralsight-api.herokuapp.com react-scripts start",
+    "start:dev": "react-scripts start",
     "prestart:api": "node tools/createMockDb.js",
     "start:api": "node tools/apiServer.js",
     "build": "react-scripts build",
