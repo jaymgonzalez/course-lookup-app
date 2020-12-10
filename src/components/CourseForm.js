@@ -1,9 +1,25 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import TextInput from "./common/TextInput"
 import PropTypes from "prop-types"
 import { Redirect } from "react-router-dom"
 
+const url = 'https://course-pluralsight-api.herokuapp.com/authors'
+
 function CourseForm(props) {
+
+  const [authorsData, setAuthorsData] = useState([]);
+
+  useEffect(() => {
+    getAuthorsData()
+  }, [])
+
+
+  const getAuthorsData = async () => {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    setAuthorsData(jsonData);
+  }
+
   if (typeof props.course !== "undefined") {
     return (
       <form onSubmit={props.onSubmit}>
@@ -26,8 +42,7 @@ function CourseForm(props) {
               className="form-control"
             >
               <option value="" />
-              <option value="1">Cory House</option>
-              <option value="2">Scott Allen</option>
+              {authorsData.map((author, i) => <option key={i} value={author.id}>{author.name}</option>)}
             </select>
           </div>
           {props.errors.authorId && (
