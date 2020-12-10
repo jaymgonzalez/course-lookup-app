@@ -10,7 +10,7 @@ const courses = [
     id: 2,
     title: "React: The Big Picture",
     slug: "react-big-picture",
-    authorId: 1,
+    authorId: 2,
     category: "JavaScript"
   },
   {
@@ -24,14 +24,14 @@ const courses = [
     id: 4,
     title: "Building a JavaScript Development Environment",
     slug: "javascript-development-environment",
-    authorId: 1,
+    authorId: 3,
     category: "JavaScript"
   },
   {
     id: 5,
     title: "Building Applications with React and Redux",
     slug: "react-redux-react-router-es6",
-    authorId: 1,
+    authorId: 3,
     category: "JavaScript"
   },
   {
@@ -45,7 +45,7 @@ const courses = [
     id: 7,
     title: "Clean Code: Writing Code for Humans",
     slug: "writing-clean-code-humans",
-    authorId: 1,
+    authorId: 2,
     category: "Software Practices"
   },
   {
@@ -66,7 +66,7 @@ const courses = [
     id: 10,
     title: "Web Component Fundamentals",
     slug: "web-components-shadow-dom",
-    authorId: 1,
+    authorId: 3,
     category: "HTML5"
   }
 ];
