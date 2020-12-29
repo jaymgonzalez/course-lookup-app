@@ -24,7 +24,7 @@ function CourseList(props) {
               <td>
                 <Link to={"/course/" + course.slug}>{course.title}</Link>
               </td>
-              <td>{course.authorId === authorsData.id && authorsData.name}</td>
+              <td>{authorsData.map(author => author.id === course.authorId && author.name)}</td>
               <td>{course.category}</td>
               <td>
                 <button
